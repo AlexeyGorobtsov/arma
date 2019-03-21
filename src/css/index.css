@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'AvenirNextCyrR';
+    src: url('../fonts/AvenirNextCyr-Regular.woff');
+}
+
+@font-face {
+    font-family: 'AvenirNextCyrB';
+    src: url('../fonts/AvenirNextCyr-Bold.woff');
+}
+
+@font-face {
+    font-family: 'AvenirNextCyrL';
+    src: url('../fonts/AvenirNextCyr-Light.woff');
+}
+/*col-md-7*/
+.wrap-header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 14px 0;
+}
+
+.bg-start-screen {
+    background: url('../images/bg.png') center;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-family: 'AvenirNextCyrR', sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    padding: 100px 0 0 100px;
+}
+
+.bg-start-screen
+.content
+h1 {
+    font-size: 80px;
+    font-family: 'AvenirNextCyrB', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1;
+    padding: 20px 0 0 96px;
+}
+
+.project-name {
+    font-size: 14px;
+    font-family: "AvenirNextCyrL", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    padding: 110px 0 0 100px;
+    display: flex;
+}
+
+.wrap-input-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.project-input {
+    font-size: 30px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.5;
+    margin: 0 0 0 100px;
+    background: transparent;
+    border: unset;
+    border-bottom: 1px rgba(255, 255, 255, .3) solid;
+    width: 100%;
+    max-width: 600px;
+}
+input#name-system:focus {
+    outline: unset;
+}
+.create {
+    border-radius: 3px;
+    background-color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-family: "AvenirNextCyrB", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    width: 160px;
+    height: 48px;
+    border-color: rgb(0, 0, 0);
+    position: relative;
+    bottom: 8px;
+    right: 156px;
+}
+.placeholders  .example {
+    font-size: 14px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    padding: 4px 0 0 100px;
+}
+.placeholders {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+
+}
+.placeholders p span{
+    background-color: rgb(0, 0, 0);
+    opacity: 0.302;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+.placeholders p {
+    font-size: 12px;
+    font-family: "AvenirNextCyrL", sans-serif;
+    color: rgba(255, 255, 255, 0.702);
+    line-height: 1.5;
+    padding-top: 4px;
+}
+/*col-md-5*/
+.template {
+    padding: 100px 0 0 0;
+}
+.template
+.title {
+    font-size: 18px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+}
+p.content{
+    font-size: 14px;
+    font-family: "AvenirNextCyrL", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    max-width: 370px;
+}
+.item-1, .item-2, .item-3{
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    width: 180px;
+    height: 140px;
+    margin: 4px;
+}
+.group {
+    display: flex;
+    max-width: 472px;
+    flex-wrap: wrap;
+}

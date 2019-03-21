@@ -23,13 +23,11 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader'
                 ]
-
             },
             {
                 test: /\.(png|svg|jpg|gif|mp4)$/,
@@ -52,7 +50,7 @@ module.exports = {
             template: './index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: devMode ? '[name].css' : '[name].[hash].css'
+            filename: '[name].css'
         })
     ],
     optimization: {

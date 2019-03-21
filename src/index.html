@@ -6,8 +6,60 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap-grid.min.css" />-->
+    <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css" />-->
+    <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />-->
+    <!--<link rel="stylesheet" href="./css/index.css">-->
 </head>
 <body>
-<h1>hello webpack</h1>
+<div class="container-fluid">
+    <div class="row wrap-header">
+        <img src="${require(`./images/img__logo-black.png`)}" alt="logo">
+    </div>
+    <div class="row bg-start-screen">
+        <div class="col-md-7">
+            <div class="content">
+                <p class="subtitle">Конструктор мастер-системы</p>
+                <h1>Создайте свою мастер-систему</h1>
+                <form action="">
+                    <label class="project-name" for="name-system">Введите название вашего проекта</label>
+                    <div class="wrap-input-button">
+                        <input type="text" id="name-system" class="project-input" placeholder="Мини-отель «Веста»">
+                        <button class="create">Создать</button>
+                    </div>
+                    <div class="placeholders">
+                        <p class="example">Например</p>
+                        <p><span>Гостиница «7 кают»</span></p>
+                        <p><span>Мой загородный дом</span></p>
+                        <p><span>Отель на Ленинградке</span></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="template">
+                <p class="title">Шаблоны</p>
+                <p class="content">
+                    Воспользуйтесь готовыми шаблонами, чтобы ускорить
+                    разработку мастер-системы под свои нужды или
+                    создать свой проект с нуля.
+                </p>
+                <div class="group">
+                    <div class="item-1">
+                        <img src="${require(`./images/house 2.png`)}" alt="house">
+                        <p class="name">Загородный дом</p>
+                        <p class="description">
+                            8 дверейб 1 мастер-ключб 3 инднивидуальных ключа
+                        </p>
+                    </div>
+                    <div class="item-2"></div>
+                    <div class="item-3"></div>
+                    <div class="item-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script type="module" src="./js/index.js"></script>-->
 </body>
 </html>
