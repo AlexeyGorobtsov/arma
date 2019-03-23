@@ -10,14 +10,15 @@
     <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css" />-->
     <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />-->
     <!--<link rel="stylesheet" href="./css/startScreen/index.css">-->
+    <!--<link rel="stylesheet" href="../css/tutorial/index.css">-->
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid start-screen">
     <div class="row wrap-header">
         <img src="${require(`./images/img__logo-black.png`)}" alt="logo">
     </div>
     <div class="row bg-start-screen">
-        <div class="col-md-7">
+        <div class="col-md-8">
             <div class="content">
                 <p class="subtitle">Конструктор мастер-системы</p>
                 <h1>Создайте свою мастер-систему</h1>
@@ -36,7 +37,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
             <div class="template">
                 <p class="title">Шаблоны</p>
                 <p class="content">
@@ -88,6 +89,106 @@
         </div>
     </div>
 </div>
+<div class="container-fluid tutorial">
+    <div class="row tutorial-header">
+        <div class="col-md-2">
+            <div class="wrap-menu-nav">
+                <div class="menu-nuv">
+                    <button class="c-hamburger c-hamburger--htx">
+                        <span>toggle menu</span>
+                    </button>
+                </div>
+                <p>Меню</p>
+            </div>
+        </div>
+        <div class="col-md-5 wrap-title-created">
+            <p class="title-header">Мини-отель «Веста»</p>
+            <div class="wrap-data-created">
+                <p><span>Без шаблона</span></p>
+                <p class="data-created">создан 04.05.12</p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="wrap-mini-logo">
+                <img src="${require(`./images/img__logo-black_mini.png`)}" alt="logo">
+                <p class="desc-logo">Конструктор мастер системы v1.0</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap-tutorial-content">
+                <div class="create-door">
+                    <div class="wrap-create-door">
+                        <button>+ Добавить дверь</button>
+                        <p class="or">или</p>
+                        <div class="wrap-img-some-door">
+                            <img src="${require(`./images/door_icon.png`)}" alt="icon door">
+                            <p class="some-door">
+                                <a href="#">+ Несколько дверей</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-instructions">
+                    <span class="instruction-href">
+                        <a href="#">Пропустить инструкции</a>
+                     </span>
+                    <div class="item-instruction-1">
+                        <p class="title-item">
+                            1.Для начала <a href="#">добавьте дверь</a>
+                        </p>
+                        <p class="desc-item">
+                            Нажмите кнопку "Добавить дверь", а затем
+                            проследуйте дальнейшим инструкциям.
+                        </p>
+                    </div>
+                    <div class="item-instruction-2">
+                        <p class="title-item">
+                            2.Внести необходимые настройки
+                        </p>
+                        <p class="desc-item">
+                            Задайте имя для вашей двери, которое
+                            позволит идентифицировать ее срерди
+                            остальных.
+                        </p>
+                    </div>
+                    <div class="item-instruction-3">
+                        <p class="title-item">
+                            3.Добавьте ключ для двери
+                        </p>
+                        <p class="desc-item">
+                            Вы можете выбрать какие ключи смогут открыть
+                            данную дверь. Также можно создать
+                            индивидуальный ключ, который открывает
+                            ТОЛЬКО эту дверь.
+                        </p>
+                    </div>
+                    <div class="item-instruction-4">
+                        <p class="title-item">
+                            4.Организуйте свою мастер-систему
+                        </p>
+                        <p class="desc-item">
+                            Добавьте требуемое количество дверей и
+                            присвойте каждое из них нужные ключи, чтобы
+                            разграничить права доступа.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</div>
+
 <!--<script type="module" src="./js/index.js"></script>-->
 </body>
 </html>
