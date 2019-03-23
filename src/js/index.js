@@ -1,1 +1,3 @@
-console.log('et')
+import './left-menu';
+import './tutorial';
+import './start-screen';

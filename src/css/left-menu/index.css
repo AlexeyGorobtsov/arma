@@ -1,0 +1,100 @@
+.side-panel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #e5e5e5;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.side-panel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;;
+    display: block;
+    transition: 0.3s;
+}
+.side-panel a:hover {
+    color: #6e6363;
+}
+.side-panel .lm-close-btn {
+    font-size: 30px;
+}
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+.openbtn:hover {
+    background-color:#444;
+}
+.left-menu {
+    padding: 0 0 100px 0;
+}
+.left-menu .wrap-close-href {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    bottom: 10px;
+    cursor: pointer;
+
+}
+.left-menu .wrap-close-href p {
+    margin: 0;
+    padding: 6px 0 0 0;
+    font-size: 12px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(0, 0, 0, 0.702);
+    line-height: 1.5;
+}
+.left-menu .header-menu {
+    display: flex;
+    align-items: center;
+    padding: 30px 0 36px 0;
+    border-bottom: 1px solid #fff;
+    margin: 0 0 0 14px;
+
+}
+.left-menu .wrap-title-created{
+    padding: 0;
+}
+.left-menu .data-created {
+    padding: 0 0 0 14px;
+}
+.make-request {
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-family: "AvenirNextCyrR", sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    padding: 10px 10px;
+    border: 1px #fff;
+}
+.wrap-title-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 574px 0 0;
+}
+.wrap-menu-href {
+    padding: 68px 0 0 128px;
+}
+.lm-item-1 {
+    padding: 0 0 58px 0;
+}
+.wrap-menu-href a {
+    font-size: 18px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1;
+}

@@ -1,0 +1,179 @@
+.right-form-panel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.right-form-menu {
+    padding: 73px 0 0 0 ;
+}
+.right-form-header p {
+    padding: 0 0 0 30px;
+}
+.right-form-header {
+    font-size: 18px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    border-bottom: 1px solid #afafaf;
+}
+.right-form-header span {
+    padding: 0 8px 0 0;
+}
+.create-key {
+    font-size: 12px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.702);
+    line-height: 1.2;
+}
+.wrap-create-key {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.302);
+    display: inline-flex;
+    margin: 28px 0 14px 56px;
+}
+.create-key:hover {
+    color: rgba(255, 255, 255, 0.702);
+    text-decoration: none;
+}
+.wrap-inp.active label {
+    font-size: 24px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1;
+}
+.wrap-inp {
+    display: flex;
+    align-items: center;
+    margin: 0 0 8px 0;
+}
+.wrap-inp label {
+    padding: 0 0 0 6px;
+    font-size: 24px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+}
+.wrap-inp input {
+    border: 1px solid rgba(255, 255, 255, 0.302);
+    border-radius: 3px;
+    width: 15px;
+    height: 15px;
+    opacity: 0.5;
+}
+.wrap-key-input {
+    overflow-y: scroll;
+    height: 100%;
+    padding: 14px 0 0 30px;
+    background: #1a1a1a;
+    max-height: 200px;
+}
+::-webkit-scrollbar { width: 8px; height: 8px;}
+::-webkit-scrollbar-button {  background-color: transparent; }
+::-webkit-scrollbar-track {  background-color: #999;}
+::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #999;}
+::-webkit-resizer { background-color: #666;}
+.wrap-number-in-key {
+    display: flex;
+    align-items: center;
+    padding: 20px 0 48px 30px;
+}
+.label-number-ind-key {
+    font-size: 14px;
+    font-family: "AvenirNextCyrL", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+}
+#number-for-in-key {
+    font-size: 30px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.5;
+    max-width: 52px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .302);
+}
+.wrap-name-for-in-key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 28px 0;
+}
+#name-for-in-key {
+    font-size: 16px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.5;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .302);
+    min-width: 260px;
+}
+.wrap-desc-textarea {
+    padding: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.wrap-desc-textarea textarea {
+    background: #000;
+    min-width: 260px;
+    min-height: 58px;
+    border: 1px solid rgba(255, 255, 255, 0.302);
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.5;
+}
+.save {
+    font-size: 14px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.302);
+    opacity: 0.302;
+    padding: 8px 92px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.302);
+}
+.wrap-button-save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10px 0;
+}
+.wrap-delete-key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.wrap-delete-key p {
+    font-size: 12px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.5;
+}
+.wrap-delete-key span {
+    color: rgba(255, 137, 137, 0.702);
+    border-bottom: 1px solid rgba(255, 137, 137, 0.702);
+}
+.wrap-delete-key img {
+    padding: 0 10px 0 0;
+    position: relative;
+    top: -8px;
+}

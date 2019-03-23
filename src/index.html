@@ -11,6 +11,8 @@
     <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />-->
     <!--<link rel="stylesheet" href="./css/startScreen/index.css">-->
     <!--<link rel="stylesheet" href="../css/tutorial/index.css">-->
+    <!--<link rel="stylesheet" href="../css/sidePanelLeft/index.css">-->
+    <!--<link rel="stylesheet" href="../css/rigth-form/index.css">-->
 </head>
 <body>
 <div class="container-fluid start-screen">
@@ -26,7 +28,7 @@
                     <label class="project-name" for="name-system">Введите название вашего проекта</label>
                     <div class="wrap-input-button">
                         <input type="text" id="name-system" class="project-input" placeholder="Мини-отель «Веста»">
-                        <button class="create">Создать</button>
+                        <button class="button-create ">Создать</button>
                     </div>
                     <div class="placeholders">
                         <p class="example">Например</p>
@@ -89,7 +91,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid tutorial">
+<div class="container-fluid tutorial hide">
     <div class="row tutorial-header">
         <div class="col-md-2">
             <div class="wrap-menu-nav">
@@ -118,6 +120,32 @@
     <div class="row">
         <div class="col-md-12">
             <div class="wrap-tutorial-content">
+                <div class="c-door">
+                    <div class="head-door">
+                        <div class="wrap-image-door">
+                            <img src="${require(`./images/door.png`)}" alt="door">
+                        </div>
+                        <div class="wrap-name-door">
+                            <p class="name-door">Входная основная</p>
+                            <p class="desc-door">Основная входная дверь в отель</p>
+                        </div>
+                    </div>
+                    <div class="content-door">
+                        <div class="content-door-wrap-img">
+                            <img src="${require(`./images/key.png`)}" alt="key">
+                            <p class="owner"><span>Владелец</span></p>
+                        </div>
+                        <div class="content-door-wrap-img">
+                            <img src="${require(`./images/key.png`)}" alt="key">
+                            <p class="owner"><span>Владелец</span></p>
+                        </div>
+                        <div class="content-door-wrap-img">
+                            <img src="${require(`./images/key.png`)}" alt="key">
+                            <p class="owner"><span>Владелец</span></p>
+                        </div>
+                        <div class="add-door"><span>+</span></div>
+                    </div>
+                </div>
                 <div class="create-door">
                     <div class="wrap-create-door">
                         <button>+ Добавить дверь</button>
@@ -179,12 +207,109 @@
         </div>
     </div>
     <div class="row">
-        <div id="mySidepanel" class="sidepanel">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+        <div class="left-menu">
+            <div id="leftSidePanel" class="side-panel">
+                <div class="header-menu">
+                    <div class="wrap-close-href">
+                        <a href="#" class="lm-close-btn">×</a>
+                        <p>Закрыть</p>
+                    </div>
+                    <div class="wrap-title-button">
+                        <div class="wrap-title-created">
+                            <p class="title-header">Мини-отель «Веста»</p>
+                            <div class="wrap-data-created">
+                                <p><span>Без шаблона</span></p>
+                                <p class="data-created">создан 04.05.12</p>
+                            </div>
+                        </div>
+                        <button class="make-request">Оформить&nbsp;заявку</button>
+                    </div>
+                </div>
+                <div class="wrap-menu-href">
+                    <div class="lm-item-1">
+                        <a href="#" class="new-project">Новый проект</a>
+                        <a href="#">Сохранить проект</a>
+                        <a href="#">Загрузить проект</a>
+                    </div>
+                    <div class="lm-item-2">
+                        <a href="#" class="reference">Справка</a>
+                        <a href="#" class="constructor">О конструкторе</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="right-form" class="right-form-panel">
+            <div class="right-form-menu">
+                <div class="right-form-header">
+                    <p><span>&#8592;</span>Редактирование двери</p>
+                </div>
+                <div class="right-form-content">
+                    <div class="wrap-create-key">
+                        <a href="#" class="create-key">Создать ключ</a>
+                    </div>
+                    <div class="wrap-key-input">
+                        <div class="wrap-inp active">
+                            <input type="checkbox" id="1">
+                            <label for="1">Владелец</label>
+                        </div>
+                        <div class="wrap-inp">
+                            <input type="checkbox" id="2">
+                            <label for="2">Администратор</label>
+                        </div>
+                        <div class="wrap-inp">
+                            <input type="checkbox" id="3">
+                            <label for="2">Администратор</label>
+                        </div>
+                        <div class="wrap-inp">
+                            <input type="checkbox" id="4">
+                            <label for="2">Администратор</label>
+                        </div>
+                        <div class="wrap-inp">
+                            <input type="checkbox" id="5">
+                            <label for="2">Администратор</label>
+                        </div>
+                        <div class="wrap-inp">
+                            <input type="checkbox" id="6">
+                            <label for="2">Администратор</label>
+                        </div>
+                        <div class="wrap-inp">
+                            <input type="checkbox" id="7">
+                            <label for="2">Администратор</label>
+                        </div>
+                    </div>
+                    <div class="wrap-number-in-key">
+                        <input type="text" id="number-for-in-key" placeholder="0">
+                        <label for="number-for-in-key" class="label-number-ind-key">
+                            количество индивидуальных
+                            ключей для данной двери
+                        </label>
+                    </div>
+                    <div class="wrap-name-for-in-key">
+                        <input type="text" id="name-for-in-key"
+                               placeholder="Задняя (служебный)"
+                        >
+                        <label for="name-for-in-key"
+                               class="label-name-for-in-key"
+                        >
+                            Название
+                        </label>
+                    </div>
+                    <div class="wrap-desc-textarea">
+                        <textarea id="id-textarea"
+                        >
+                        </textarea>
+                    </div>
+                    <div class="wrap-button-save">
+                        <button class="save">Сохранить</button>
+                    </div>
+                    <div class="wrap-delete-key">
+                        <img src="${require(`./images/icon__delete.png`)}" alt="delete">
+                        <p><span>Удалить</span>&nbsp;&nbsp;(необратимая операция)</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

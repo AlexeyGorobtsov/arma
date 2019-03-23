@@ -174,6 +174,7 @@
 .create-door {
     border: 1px dashed rgba(0, 0, 0, 0.302);
     flex: 364px 0 0;
+    margin: 8px;
 }
 .wrap-tutorial-content {
     margin: 0;
@@ -214,7 +215,7 @@
     font-family: "AvenirNextCyrR", sans-serif;
     color: rgb(0, 0, 0);
     line-height: 1.5;
-    padding: 0 0 0 10px;
+    margin: 0 0 0 10px;
 }
 .some-door a {
     border-bottom: 1px solid #afafaf;
@@ -244,7 +245,7 @@
     text-decoration: none;
 }
 .wrap-instructions {
-    padding: 0 0 0 110px;
+    padding: 0 0 0 94px;
 }
 .tutorial .title-item,
  .tutorial .title-item a {
@@ -280,4 +281,169 @@
 }
 .tutorial [class*=item-instruction-]:hover {
     background: #fbfbfb;
+}
+
+.fadeIn {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeOut  {
+    animation: fade_out 2s;
+    -moz-animation: fade_out 2s; /* Firefox */
+    -webkit-animation: fade_out 1s; /* Safari and Chrome */
+    -o-animation: fade_out 2s; /* Opera */
+}
+@keyframes fade_out {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+@-moz-keyframes fade_out { /* Firefox */
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+@-webkit-keyframes fade_out { /* Safari and Chrome */
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.hide-dom {
+    display: none;
+}
+.head-door {
+    display: flex;
+    background: #e5e5e5;
+    padding: 12px 20px 0 20px;
+}
+.wrap-name-door {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    padding: 0 0 0 20px;
+}
+.wrap-name-door p {
+    margin: 0;
+}
+.wrap-name-door .desc-door {
+    font-size: 12px;
+}
+.wrap-image-door {
+    overflow: hidden;
+    max-height: 76px;
+}
+.content-door .owner {
+    font-size: 14px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    margin: 0;
+}
+.content-door .owner span {
+    background: #ffdb85;
+    padding: 2px 8px 4px 50px;
+    border-radius: 12px;
+}
+.content-door-wrap-img {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 14px;
+    padding: 0 0 6px 0;
+}
+.content-door-wrap-img img {
+    position: relative;
+    left: 36px;
+    background-image: url("../../images/key.png");
+    background-size: initial;
+}
+.c-door {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 7px 0 rgba(63, 18, 166, 0.1);
+    margin: 8px;
+    max-width: 364px;
+}
+.c-door:hover {
+    background: #fbfbfb;
+}
+.c-door .content-door {
+    background: #ffffff;
+    padding: 10px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.content-door .add-door {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgba(159, 159, 159, 0.302);
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 20px 4px 12px;
+}
+.content-door .add-door span {
+    font-size: 14px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
 }
