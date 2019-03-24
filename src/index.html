@@ -13,9 +13,10 @@
     <!--<link rel="stylesheet" href="../css/tutorial/index.css">-->
     <!--<link rel="stylesheet" href="../css/sidePanelLeft/index.css">-->
     <!--<link rel="stylesheet" href="../css/rigth-form/index.css">-->
+    <!--<link rel="stylesheet" href="./css/total-form/index.css">-->
 </head>
 <body>
-<div class="container-fluid start-screen">
+<div class="container-fluid start-screen hide-dom">
     <div class="row wrap-header">
         <img src="${require(`./images/img__logo-black.png`)}" alt="logo">
     </div>
@@ -104,7 +105,7 @@
             </div>
         </div>
         <div class="col-md-5 wrap-title-created">
-            <p class="title-header">Мини-отель «Веста»</p>
+            <p class="title-header-t">Мини-отель «Веста»</p>
             <div class="wrap-data-created">
                 <p><span>Без шаблона</span></p>
                 <p class="data-created">создан 04.05.12</p>
@@ -143,17 +144,17 @@
                             <img src="${require(`./images/key.png`)}" alt="key">
                             <p class="owner"><span>Владелец</span></p>
                         </div>
-                        <div class="add-door"><span>+</span></div>
+                        <div class="add-key"><span>+</span></div>
                     </div>
                 </div>
                 <div class="create-door">
                     <div class="wrap-create-door">
-                        <button>+ Добавить дверь</button>
+                        <button class="b-create-door">+ Добавить дверь</button>
                         <p class="or">или</p>
                         <div class="wrap-img-some-door">
                             <img src="${require(`./images/door_icon.png`)}" alt="icon door">
                             <p class="some-door">
-                                <a href="#">+ Несколько дверей</a>
+                                <a href="#" data-toggle="modal" data-target="#exampleModal">+ Несколько дверей</a>
                             </p>
                         </div>
                     </div>
@@ -307,6 +308,93 @@
                     <div class="wrap-delete-key">
                         <img src="${require(`./images/icon__delete.png`)}" alt="delete">
                         <p><span>Удалить</span>&nbsp;&nbsp;(необратимая операция)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="total-form" class="total-form-panel">
+            <div class="total-form-menu">
+                <div class="total-form-header">
+                    <p class="total-p">Итого</p>
+                </div>
+                <div class="wrap-total-content">
+                    <form action="#">
+                        <div class="wrap-radio">
+                            <input type="radio" id="abus" name="company">
+                            <label for="abus">
+                                <p class="price">78 000 руб</p>
+                                <p class="company">Abus</p>
+                            </label>
+                        </div>
+                        <div class="wrap-radio">
+                            <input type="radio" id="apecs" name="company">
+                            <label for="apecs">
+                                <p class="price">53 400 руб</p>
+                                <p class="company">Apecs</p>
+                            </label>
+                        </div>
+                        <div class="wrap-total-desc">
+                            <div class="wrap-total-item">
+                                <div class="wrap-item-1">
+                                    <img src="${require(`./images/total_door.png`)}" alt="door">
+                                    <div class="wrap-total-door">
+                                        <p class="number-door">7</p>
+                                        <p class="nd-desc">
+                                            дверей (цилиндров)
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="wrap-item-2">
+                                    <img src="${require(`./images/total_key.png`)}" alt="key">
+                                    <div class="wrap-total-key">
+                                        <p class="number-key">18</p>
+                                        <p class="nk-desc">
+                                            мастер-ключей
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="wrap-item-3">
+                                    <img src="${require(`./images/total_key.png`)}" alt="key">
+                                    <div class="wrap-total-in-key">
+                                        <p class="number-in-key">3</p>
+                                        <p class="nd-desc">
+                                            индив. ключа
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-button-make-request">
+                                <button class="b-m-request">
+                                    Оформить заявку
+                                </button>
+                            </div>
+                            <div class="wrap-desc-make-r">
+                                <p class="desk-r">
+                                    Далее необходимо
+                                    заполнить форму заявки
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-modal">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Введите количество дверей.</h6>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control-custom">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button-ok">Ok</button>
                     </div>
                 </div>
             </div>

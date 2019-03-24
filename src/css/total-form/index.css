@@ -1,0 +1,118 @@
+.total-form-panel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.total-form-menu {
+    padding: 73px 0 0 0 ;
+}
+.total-form-header p {
+    padding: 0 0 0 60px;
+}
+.total-form-header {
+    font-size: 18px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    border-bottom: 1px solid #afafaf;
+}
+.total-p {
+    font-size: 18px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+}
+.wrap-total-content {
+    padding: 38px 0 0 0;
+}
+.wrap-radio {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0 0 30px;
+}
+.wrap-radio input {
+    border: 1px solid rgba(255, 255, 255, 0.302);
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    margin: 8px 10px 0 0;
+}
+.wrap-radio .price {
+    font-size: 24px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+}
+.company {
+    font-size: 14px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.5;
+}
+.wrap-total-desc {
+    padding: 120px 0 0 0;
+}
+.wrap-total-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.302);
+    padding: 0 0 0 18px;
+    margin: 0 0 0 30px;
+}
+.wrap-total-desc [class*=wrap-item-] {
+    display: flex;
+    align-items: center;
+}
+.wrap-total-key {
+    display: flex;
+    flex-direction: column;
+}
+.wrap-total-item [class*=wrap-total-] p {
+    font-size: 14px;
+    font-family: "AvenirNextCyrL", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    margin: 0;
+}
+.wrap-total-item [class*=wrap-total-] {
+    padding: 0 0 10px 18px;
+}
+.wrap-total-item .wrap-total-door {
+    padding: 0 0 10px 30px;
+}
+.wrap-button-make-request {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 14px 0;
+}
+.b-m-request {
+    font-size: 14px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 12px 70px;
+    border-radius: 3px;
+    background-color: rgb(63, 18, 166);
+    border: 1px solid rgb(63, 18, 166);
+}
+.wrap-desc-make-r {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrap-desc-make-r .desk-r {
+    font-size: 12px;
+    font-family: "AvenirNextCyrR", sans-serif;
+    color: rgba(255, 255, 255, 0.302);
+    line-height: 1.5;
+    flex: 160px 0 0;
+    text-align: center;
+}

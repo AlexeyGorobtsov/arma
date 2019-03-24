@@ -7,7 +7,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     context: path.resolve(__dirname, 'src'),
     entry: {
         index: './index.js',
