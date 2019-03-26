@@ -19,15 +19,17 @@
 .wrap-header {
     display: flex;
     justify-content: center;
-    padding: 20px 0 14px 0;
+    padding: 22px 0 22px 0;
 }
 
 .bg-start-screen {
     background: url('../../images/bg.png') center;
     background-size: cover;
-    padding-bottom: 100px;
+    padding-bottom: 222px;
 }
-
+.content-bg-s {
+    padding: 0 0 0 80px;
+}
 .subtitle {
     font-size: 18px;
     font-family: 'AvenirNextCyrR', sans-serif;
@@ -37,7 +39,7 @@
 }
 
 .bg-start-screen
-.content
+.content-bg-s
 h1 {
     font-size: 80px;
     font-family: 'AvenirNextCyrB', sans-serif;

@@ -1,3 +1,5 @@
+import { idDeleteDoor} from '../index';
+
 export const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const fadeOut = (domElement) => {
@@ -50,9 +52,10 @@ export const createDoorFunc = (
 
 export const clickPlus = (domElement) => {
     const addKey = document.querySelectorAll('.add-key');
-    addKey.forEach(item => {
+    addKey.forEach((item, i) => {
         item.addEventListener('click', e => {
             e.preventDefault();
+            idDeleteDoor.id = i;
             delay(400)
                 .then(() => (domElement.style.width = '325px'));
         });
@@ -68,4 +71,14 @@ export const clickHeadDoor = (domElement) => {
                 .then(() => (domElement.style.width = '325px'));
         });
     });
+};
+
+export const getDoors = (number) => {
+    if (parseInt(number) > 0 && parseInt(number) < 20) {
+        let doors = [];
+        for (let i = 0; i < number; i++) {
+            doors.push(createDoorFunc());
+        }
+        return doors;
+    }
 };

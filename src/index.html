@@ -22,7 +22,7 @@
     </div>
     <div class="row bg-start-screen">
         <div class="col-md-8">
-            <div class="content">
+            <div class="content-bg-s">
                 <p class="subtitle">Конструктор мастер-системы</p>
                 <h1>Создайте свою мастер-систему</h1>
                 <form action="">
@@ -252,32 +252,32 @@
                     </div>
                     <div class="wrap-key-input">
                         <div class="wrap-inp active">
-                            <input type="checkbox" id="1">
-                            <label for="1">Владелец</label>
+                            <input type="checkbox" id="1rf">
+                            <label for="1rf">Владелец</label>
                         </div>
                         <div class="wrap-inp">
-                            <input type="checkbox" id="2">
-                            <label for="2">Администратор</label>
+                            <input type="checkbox" id="2rf">
+                            <label for="2rf">Администратор</label>
                         </div>
                         <div class="wrap-inp">
-                            <input type="checkbox" id="3">
-                            <label for="2">Администратор</label>
+                            <input type="checkbox" id="3rf">
+                            <label for="3rf">Уборщица</label>
                         </div>
                         <div class="wrap-inp">
-                            <input type="checkbox" id="4">
-                            <label for="2">Администратор</label>
+                            <input type="checkbox" id="4rf">
+                            <label for="4rf">Постоялец 1</label>
                         </div>
                         <div class="wrap-inp">
-                            <input type="checkbox" id="5">
-                            <label for="2">Администратор</label>
+                            <input type="checkbox" id="5rf">
+                            <label for="5rf">Постоялец 2</label>
                         </div>
                         <div class="wrap-inp">
-                            <input type="checkbox" id="6">
-                            <label for="2">Администратор</label>
+                            <input type="checkbox" id="6rf">
+                            <label for="6rf">Постоялец 3</label>
                         </div>
                         <div class="wrap-inp">
-                            <input type="checkbox" id="7">
-                            <label for="2">Администратор</label>
+                            <input type="checkbox" id="7rf">
+                            <label for="7rf">Постоялец 4</label>
                         </div>
                     </div>
                     <div class="wrap-number-in-key">
@@ -299,6 +299,7 @@
                     </div>
                     <div class="wrap-desc-textarea">
                         <textarea id="id-textarea"
+                                  class="desc-textarea-door"
                         >
                         </textarea>
                     </div>
@@ -391,10 +392,10 @@
                         <h6 class="modal-title" id="exampleModalLabel">Введите количество дверей.</h6>
                     </div>
                     <div class="col-md-12">
-                        <input type="text" class="form-control-custom">
+                        <input type="number" class="number-door-custom" max="19">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="button-ok">Ok</button>
+                        <button type="button" class="button-ok" data-dismiss="modal">Ok</button>
                     </div>
                 </div>
             </div>
