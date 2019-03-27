@@ -1,6 +1,6 @@
-import { idDeleteDoor } from '../index.js';
-import { rightForm  } from '../tutorial/index.js';
-import { delay } from '../helper/index.js';
+import {idDeleteDoor} from '../index.js';
+import {rightForm} from '../tutorial/index.js';
+import {delay} from '../helper/index.js';
 
 const wrapInput = document.querySelectorAll('.wrap-inp');
 const save = document.querySelector('.save');
@@ -24,6 +24,14 @@ try {
 
     save.addEventListener('click', e => {
         e.preventDefault();
+        const trueKeyHoldersRF = keyHoldersRF.filter(item =>  item.input === true);
+        console.log(trueKeyHoldersRF);
+        const div = document.createElement('div');
+        div.classList.add('content-door-wrap-img');
+        div.innerHTML = `
+                        <img src="images/key.png" alt="key">
+                        <p class="owner"><span>Владелец</span></p>`;
+        console.log(div);
         console.log(keyHoldersRF);
     });
 
