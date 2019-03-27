@@ -1,6 +1,6 @@
-import { idDeleteDoor } from '../index';
-import { rightForm  } from '../tutorial';
-import { delay } from '../helper';
+import { idDeleteDoor } from '../index.js';
+import { rightForm  } from '../tutorial/index.js';
+import { delay } from '../helper/index.js';
 
 const wrapInput = document.querySelectorAll('.wrap-inp');
 const save = document.querySelector('.save');

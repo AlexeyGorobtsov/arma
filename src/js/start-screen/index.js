@@ -1,5 +1,5 @@
-import { fadeIn, fadeOut, getPresentDay } from '../helper';
-import { mainObjDom } from '../index';
+import { fadeIn, fadeOut, getPresentDay } from '../helper/index.js';
+import { mainObjDom } from '../index.js';
 
 const buttonCreate = document.querySelector('.button-create');
 const startScreen = document.querySelector('.start-screen');

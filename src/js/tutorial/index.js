@@ -6,8 +6,8 @@ import {
     createDoorFunc,
     clickHeadDoor,
     getDoors,
-} from '../helper';
-import { idDeleteDoor } from '../index';
+} from '../helper/index.js';
+import { idDeleteDoor } from '../index.js';
 
 const instructionHref = document.querySelector('.instruction-href');
 const wrapTutorialContent = document.querySelector('.wrap-tutorial-content');

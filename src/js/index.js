@@ -1,5 +1,6 @@
 import './jquery/jquery.min.js';
 import './bootstrap/bootstrap.min.js';
+import './helper/index.js';
 import './left-menu/index.js';
 import './right-from/index.js';
 import './tutorial/index.js';

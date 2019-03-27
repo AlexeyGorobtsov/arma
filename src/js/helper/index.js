@@ -1,4 +1,4 @@
-import { idDeleteDoor} from '../index';
+import { idDeleteDoor} from '../index.js';
 
 export const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -34,6 +34,7 @@ export const createDoorFunc = (
 ) => {
     const div = document.createElement('div');
     div.classList.add('c-door');
+    //<img src="./images/door.png" alt="door">
     div.innerHTML = `
                     <div class="head-door">
                         <div class="wrap-image-door">

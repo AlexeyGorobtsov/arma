@@ -1,7 +1,7 @@
-import {delay, fadeOut} from '../helper';
-import {tutorialDom} from '../tutorial';
-import {startScreenDom} from '../start-screen';
-import { fadeIn } from '../helper';
+import {delay, fadeOut} from '../helper/index.js';
+import {tutorialDom} from '../tutorial/index.js';
+import {startScreenDom} from '../start-screen/index.js';
+import { fadeIn } from '../helper/index.js';
 
 const hamburger = document.querySelector('.c-hamburger');
 const leftPanel = document.getElementById('leftSidePanel');
