@@ -7,7 +7,6 @@ import {
     clickHeadDoor,
     getDoors,
 } from '../helper/index.js';
-import { idDeleteDoor, ownersDoor } from '../index.js';
 
 const instructionHref = document.querySelector('.instruction-href');
 const wrapTutorialContent = document.querySelector('.wrap-tutorial-content');
@@ -44,26 +43,10 @@ try {
     /**
      * show right form when you press the plus
      */
-    const addKey = document.querySelectorAll('.add-key');
-    addKey.forEach((item, i) => {
-        item.addEventListener('click', e => {
-            e.preventDefault();
-            idDeleteDoor.id = i;
-            ownersDoor.labels = e.target.closest('.content-door').querySelectorAll('.content-door-wrap-img');
-            const wrapInput = document.querySelectorAll('.wrap-inp');
-            wrapInput.forEach((item, i) => {
-                let input = item.querySelector('input');
-                const label = item.querySelector('label').textContent;
-                const length = ownersDoor.labels.length;
-                if (length > i) {
-                    const owner = ownersDoor.labels[i].querySelector('span').textContent;
-                    owner === label ? (input.checked = true) : (input.checked = false);
-                }
-            });
-
-            delay(400)
-                .then(() => (rightForm.style.width = '325px'));
-        });
+    document.addEventListener('click', e => {
+        if (e.target.classList.contains('add-key')) {
+            clickPlus(rightForm, e);
+        }
     });
     /**
      * hide right-form when we click outside right-form
@@ -92,7 +75,7 @@ try {
         const door = createDoorFunc();
         const parentDiv = createDoor.parentNode;
         parentDiv.insertBefore(door, createDoor);
-        clickPlus(rightForm);
+        //clickPlus(rightForm);
         clickHeadDoor(totalFormPanel);
     });
     /**
@@ -106,7 +89,7 @@ try {
                 doors.forEach(door => {
                     const parentDiv = createDoor.parentNode;
                     parentDiv.insertBefore(door, createDoor);
-                    clickPlus(rightForm);
+                    //clickPlus(rightForm);
                     clickHeadDoor(totalFormPanel);
                 });
             })

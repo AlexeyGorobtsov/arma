@@ -40,7 +40,7 @@
     color: rgba(255, 255, 255, 0.702);
     text-decoration: none;
 }
-.wrap-inp.active label {
+.wrap-inp input[type="checkbox"]:checked + label {
     font-size: 24px;
     font-family: "AvenirNextCyrR", sans-serif;
     color: rgb(255, 255, 255);
