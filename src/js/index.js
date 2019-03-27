@@ -7,4 +7,5 @@ import './tutorial/index.js';
 import './start-screen/index.js';
 import './total-form/index.js';
 export const idDeleteDoor = {};
+export const ownersDoor = {};
 export const mainObjDom = {};

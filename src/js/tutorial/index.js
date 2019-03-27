@@ -7,7 +7,7 @@ import {
     clickHeadDoor,
     getDoors,
 } from '../helper/index.js';
-import { idDeleteDoor } from '../index.js';
+import { idDeleteDoor, ownersDoor } from '../index.js';
 
 const instructionHref = document.querySelector('.instruction-href');
 const wrapTutorialContent = document.querySelector('.wrap-tutorial-content');
@@ -49,6 +49,18 @@ try {
         item.addEventListener('click', e => {
             e.preventDefault();
             idDeleteDoor.id = i;
+            ownersDoor.labels = e.target.closest('.content-door').querySelectorAll('.content-door-wrap-img');
+            const wrapInput = document.querySelectorAll('.wrap-inp');
+            wrapInput.forEach((item, i) => {
+                let input = item.querySelector('input');
+                const label = item.querySelector('label').textContent;
+                const length = ownersDoor.labels.length;
+                if (length > i) {
+                    const owner = ownersDoor.labels[i].querySelector('span').textContent;
+                    owner === label ? (input.checked = true) : (input.checked = false);
+                }
+            });
+
             delay(400)
                 .then(() => (rightForm.style.width = '325px'));
         });

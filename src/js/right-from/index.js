@@ -1,14 +1,12 @@
-import {idDeleteDoor} from '../index.js';
+import { idDeleteDoor, ownersDoor } from '../index.js';
 import {rightForm} from '../tutorial/index.js';
-import {delay} from '../helper/index.js';
+import { delay, getContentDoor } from '../helper/index.js';
 
 const wrapInput = document.querySelectorAll('.wrap-inp');
 const save = document.querySelector('.save');
-const numberForInKeyRF = document.querySelector('#number-for-in-key');
-const nameForInKeyRF = document.querySelector('#name-for-in-key');
-const descTextareaDoorRF = document.querySelector('#desc-textarea-door');
 const wrapDeleteKey = document.querySelector('.wrap-delete-key');
-const keyHoldersRF = [];
+let keyHoldersRF = [];
+
 try {
     wrapInput.forEach((item, id) => {
         const input = item.querySelector('input').checked;
@@ -24,15 +22,11 @@ try {
 
     save.addEventListener('click', e => {
         e.preventDefault();
-        const trueKeyHoldersRF = keyHoldersRF.filter(item =>  item.input === true);
-        console.log(trueKeyHoldersRF);
-        const div = document.createElement('div');
-        div.classList.add('content-door-wrap-img');
-        div.innerHTML = `
-                        <img src="images/key.png" alt="key">
-                        <p class="owner"><span>Владелец</span></p>`;
-        console.log(div);
-        console.log(keyHoldersRF);
+        const cDoors = document.querySelectorAll('.c-door');
+        const removeDomElement = cDoors[idDeleteDoor.id].querySelectorAll('.content-door-wrap-img');
+        removeDomElement.forEach(item => item.remove());
+        getContentDoor(keyHoldersRF);
+        //let keyHoldersRF = [];
     });
 
     wrapDeleteKey.addEventListener('click', e => {
@@ -46,9 +40,3 @@ try {
 } catch (e) {
     console.log(e);
 }
-export const rightFormObj = {
-    numberForInKeyRF: numberForInKeyRF.value,
-    keyHoldersRF,
-    nameForInKeyRF,
-    descTextareaDoorRF,
-};
