@@ -43,19 +43,24 @@
     height: 13px;
     margin: 8px 10px 0 0;
 }
-.wrap-radio .price {
+.wrap-radio .price-abus,
+.wrap-radio .price-apecs {
     font-size: 24px;
     font-family: "AvenirNextCyrR", sans-serif;
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.302);
     font-weight: bold;
     line-height: 1;
     margin: 0;
+}
+.wrap-radio input[type="radio"]:checked + label {
+    color: rgb(255, 255, 255);
 }
 .company {
     font-size: 14px;
     font-family: "AvenirNextCyrR", sans-serif;
     color: rgba(255, 255, 255, 0.302);
     line-height: 1.5;
+    padding: 0 0 0 54px;
 }
 .wrap-total-desc {
     padding: 120px 0 0 0;

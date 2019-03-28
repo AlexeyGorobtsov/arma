@@ -1,7 +1,18 @@
 import {idDeleteDoor} from '../index.js';
 import {ownersDoor} from '../index';
 import {constants} from '../constants.js';
-import {nameForInKeyRF, descTextareaDoorRF, individualKeyRF} from '../DOM/index.js';
+import {
+    nameForInKeyRF,
+    descTextareaDoorRF, // RF right form
+    individualKeyRF,
+    numberDoorTF, // TF total form
+    numberKeyTF,
+    numberInKeyTF,
+    priceAbus,
+    priceApecs,
+
+} from '../DOM/index.js';
+import {calculation} from '../pricing';
 
 const {defaultNameDoor, defaultDescDoor, defaultImage} = constants;
 
@@ -58,7 +69,7 @@ export const createDoorFunc = (
     return div;
 };
 
-const getInt = str => {
+export const getInt = str => {
     const array = [...str].filter(item => {
         if (!isNaN(parseInt(item))) {
 
@@ -66,7 +77,7 @@ const getInt = str => {
         }
     });
 
-    return parseInt(array.join(''));
+    return array.length ? parseInt(array.join('')) : '';
 };
 
 export const clickPlus = (domElement, e) => {
@@ -102,15 +113,35 @@ export const clickPlus = (domElement, e) => {
         .then(() => (domElement.style.width = '325px'));
 };
 
-export const clickHeadDoor = (domElement) => {
-    const headDoor = document.querySelectorAll('.head-door');
-    headDoor.forEach(item => {
-        item.addEventListener('click', e => {
-            e.preventDefault();
-            delay(400)
-                .then(() => (domElement.style.width = '325px'));
-        });
+const getNumberInKeys = array => {
+
+    const helpArr = [];
+    array.forEach(item => {
+        const number = getInt(item.textContent);
+        typeof number === 'number'
+            ? helpArr.push(getInt(item.textContent))
+            : false;
     });
+
+    return helpArr.reduce((acc, currentV) => {
+
+        return (currentV) + acc;
+    }, 0);
+};
+
+export const clickHeadDoor = (domElement, e) => {
+    e.preventDefault();
+    delay(400)
+        .then(() => (domElement.style.width = '325px'));
+    const numberDoors = document.querySelectorAll('.c-door');
+    const numberKeys = document.querySelectorAll('.content-door-wrap-img');
+    const numberInKeys = document.querySelectorAll('.in-key-hd');
+    numberDoorTF.textContent = numberDoors.length;
+    numberKeyTF.textContent = numberKeys.length;
+    numberInKeyTF.textContent = getNumberInKeys(numberInKeys);
+    const price = calculation(numberDoors);
+    priceAbus.textContent = `${price.abusPrice} руб.`;
+    priceApecs.textContent = `${price.apecsPrice} руб.`;
 };
 
 export const getDoors = (number) => {
@@ -157,5 +188,6 @@ export const getWrapInput = array => {
             keyHoldersRF[id] = {id, input, label};
         });
     });
+
     return keyHoldersRF;
 };

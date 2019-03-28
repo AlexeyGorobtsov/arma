@@ -63,6 +63,14 @@ try {
         });
     });
 
+    document.addEventListener('click', e => {
+        const headDoor = e.target.closest('.head-door');
+        (headDoor !== null
+            ? headDoor.contains(e.target): false)
+            ? clickHeadDoor(totalFormPanel, e)
+            : false;
+    });
+
     /**
      * hide total form when we click outside right-form
      */
@@ -75,8 +83,6 @@ try {
         const door = createDoorFunc();
         const parentDiv = createDoor.parentNode;
         parentDiv.insertBefore(door, createDoor);
-        //clickPlus(rightForm);
-        clickHeadDoor(totalFormPanel);
     });
     /**
      * create the number of doors specified in the modal window
@@ -89,8 +95,6 @@ try {
                 doors.forEach(door => {
                     const parentDiv = createDoor.parentNode;
                     parentDiv.insertBefore(door, createDoor);
-                    //clickPlus(rightForm);
-                    clickHeadDoor(totalFormPanel);
                 });
             })
             .then(() => numberDoorCustom.value = '');
