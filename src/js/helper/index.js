@@ -1,7 +1,10 @@
 import {idDeleteDoor} from '../index.js';
 import {ownersDoor} from '../index';
-import { constants }  from '../constants.js';
-const { defaultNameDoor, defaultDescDoor,  defaultImage } = constants;
+import {constants} from '../constants.js';
+import {nameForInKeyRF, descTextareaDoorRF, individualKeyRF} from '../DOM/index.js';
+
+const {defaultNameDoor, defaultDescDoor, defaultImage} = constants;
+
 
 export const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -55,6 +58,17 @@ export const createDoorFunc = (
     return div;
 };
 
+const getInt = str => {
+    const array = [...str].filter(item => {
+        if (!isNaN(parseInt(item))) {
+
+            return true;
+        }
+    });
+
+    return parseInt(array.join(''));
+};
+
 export const clickPlus = (domElement, e) => {
     const addKey = document.querySelectorAll('.add-key');
     addKey.forEach((item, i) => {
@@ -62,6 +76,14 @@ export const clickPlus = (domElement, e) => {
             idDeleteDoor.id = i;
         }
     });
+
+    const cDoor = e.target.closest('.c-door');
+    const individualKey = cDoor.querySelector('.in-key-hd').textContent;
+    const nameForInKey = cDoor.querySelector('.name-door').textContent;
+    const descTextareaDoor = cDoor.querySelector('.desc-door').textContent;
+    nameForInKeyRF.value = nameForInKey;
+    descTextareaDoorRF.value = descTextareaDoor;
+    individualKeyRF.value = getInt(individualKey);
     ownersDoor.labels = e.target.closest('.content-door').querySelectorAll('.content-door-wrap-img');
     const wrapInput = document.querySelectorAll('.wrap-inp');
     wrapInput.forEach(item => {
@@ -102,10 +124,7 @@ export const getDoors = (number) => {
 };
 
 export const getContentDoor = (array) => {
-    const nameForInKeyRF = document.querySelector('#name-for-in-key').value || defaultNameDoor;
-    const descTextareaDoorRF = document.querySelector('#id-textarea').value || defaultDescDoor;
-    const individualKeyRF = document.querySelector('#number-for-in-key').value;
-    const str = individualKeyRF !== '' ?`+ ${individualKeyRF} инд. кл.` : '';
+    const str = individualKeyRF.value !== '' ? `+ ${individualKeyRF.value} инд. кл.` : '';
     const cDoors = document.querySelectorAll('.c-door');
     const trueKeyHoldersRF = array.filter(item => item.input === true);
     const addKey = cDoors[idDeleteDoor.id].querySelector('.add-key');
@@ -113,8 +132,8 @@ export const getContentDoor = (array) => {
     const nameDoor = cDoors[idDeleteDoor.id].querySelector('.name-door');
     const descTextareaDoor = cDoors[idDeleteDoor.id].querySelector('.desc-door');
     const individualKey = cDoors[idDeleteDoor.id].querySelector('.in-key-hd');
-    nameDoor.innerText = nameForInKeyRF; // RF right form
-    descTextareaDoor.innerText = descTextareaDoorRF;
+    nameDoor.innerText = nameForInKeyRF.value; // RF right form
+    descTextareaDoor.innerText = descTextareaDoorRF.value;
     individualKey.innerText = str;
     trueKeyHoldersRF.forEach(item => {
         const div = document.createElement('div');
