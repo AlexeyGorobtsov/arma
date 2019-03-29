@@ -121,32 +121,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="wrap-tutorial-content">
-                <div class="c-door">
-                    <div class="head-door">
-                        <div class="wrap-image-door">
-                            <img src="images/door.png" alt="door">
-                        </div>
-                        <div class="wrap-name-door">
-                            <p class="name-door">Входная основная</p>
-                            <p class="desc-door">Основная входная дверь в отель</p>
-                            <p class="in-key-hd">+ 1 инд. ключ</p>
-                        </div>
-                    </div>
-                    <div class="content-door">
-                        <div class="content-door-wrap-img">
-                            <img src="images/key.png" alt="key">
-                            <p class="owner"><span>Владелец</span></p>
-                        </div>
-                        <div class="content-door-wrap-img">
-                            <img src="images/key.png" alt="key">
-                            <p class="owner"><span>Администратор</span></p>
-                        </div>
-                        <div class="content-door-wrap-img">
-                            <img src="images/key.png" alt="key">
-                            <p class="owner"><span>Уборщица</span></p>
-                        </div>
-                        <div class="add-key">+</div>
-                    </div>
+                <div class="wrap-c-doors">
+
                 </div>
                 <div class="create-door">
                     <div class="wrap-create-door">
@@ -230,8 +206,11 @@
                 <div class="wrap-menu-href">
                     <div class="lm-item-1">
                         <a href="#" class="new-project">Новый проект</a>
-                        <a href="#">Сохранить проект</a>
-                        <a href="#">Загрузить проект</a>
+                        <a href="#" class="save-project">Сохранить проект</a>
+                        <a href="#">
+                            <input type="file" multiple class="visually-hidden" id="fileElem">
+                            <label class="download" for="fileElem">Загрузить проект</label>
+                        </a>
                     </div>
                     <div class="lm-item-2">
                         <a href="#" class="reference">Справка</a>
@@ -303,28 +282,34 @@
                                   class="desc-textarea-door"
                         >&nbsp;</textarea>
                     </div>
-                    <div class="slideshow-container">
+                    <div class="slide-show-container">
 
-                        <div class="mySlides fade">
-                            <div class="numbertext">1 / 3</div>
-                            <img src="images/door.png" style="width:100%">
-                            <div class="text">Caption Text</div>
+                        <div class="my-slides-rf fade-s">
+                            <div class="number-text">1 / 3</div>
+                            <div class="wrap-img-sl">
+                                <img src="images/doors-slide/1.png">
+                            </div>
+                            <div class="text-sl">Дверь №1</div>
                         </div>
 
-                        <div class="mySlides fade">
-                            <div class="numbertext">2 / 3</div>
-                            <img src="images/door.png" style="width:100%">
-                            <div class="text">Caption Two</div>
+                        <div class="my-slides-rf fade-s">
+                            <div class="number-text">2 / 3</div>
+                            <div class="wrap-img-sl">
+                                <img src="./images/doors-slide/2.png">
+                            </div>
+                            <div class="text-sl">Дверь №2</div>
                         </div>
 
-                        <div class="mySlides fade">
-                            <div class="numbertext">3 / 3</div>
-                            <img src="images/door.png" style="width:100%">
-                            <div class="text">Caption Three</div>
+                        <div class="my-slides-rf fade-s">
+                            <div class="number-text">3 / 3</div>
+                            <div class="wrap-img-sl">
+                                <img src="images/doors-slide/3.png">
+                            </div>
+                            <div class="text-sl">Дверь №3</div>
                         </div>
 
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        <a class="prev-RF" href="#">&#10094;</a>
+                        <a class="next-RF" href="#">&#10095;</a>
 
                     </div>
                     <div class="wrap-button-save">
@@ -435,7 +420,8 @@
                             <form>
                                 <div class="form-group">
                                     <label for="name">Имя</label>
-                                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter email">
+                                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                                           placeholder="Николай">
                                     <small id="nameHelp" class="form-text text-muted">Введите ваше имя.</small>
                                 </div>
                                 <div class="form-group">

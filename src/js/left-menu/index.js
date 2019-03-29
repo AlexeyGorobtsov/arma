@@ -2,13 +2,19 @@ import {delay, fadeOut} from '../helper/index.js';
 import {tutorialDom} from '../tutorial/index.js';
 import {startScreenDom} from '../start-screen/index.js';
 import {fadeIn} from '../helper/index.js';
-import {makeRequest} from '../DOM';
+import {download, tempDoors} from '../helper/index';
+import {
+    saveProject,
+    hamburger,
+    leftPanel,
+    lmCloseButton,
+    reference,
+    newProject,
+    inputUpload,
+    wrapCDoors,
+} from '../DOM';
+import template from '../templates/index.js';
 
-const hamburger = document.querySelector('.c-hamburger');
-const leftPanel = document.getElementById('leftSidePanel');
-const lmCloseButton = document.querySelector('.left-menu .wrap-close-href');
-const reference = document.querySelector('.reference');
-const newProject = document.querySelector('.new-project');
 
 try {
     const hideMenu = () => {
@@ -59,11 +65,44 @@ try {
 
     });
     /**
-     * show modal window
+     * download project
      */
-    makeRequest.addEventListener('click', e => {
+    saveProject.addEventListener('click', e => {
         e.preventDefault();
-       console.log('test')
+        download('test.txt', JSON.stringify(template));
+    });
+    /**
+     * upload project
+     */
+    inputUpload.addEventListener('change', e => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+
+            //console.log(reader.result);
+            const response = JSON.parse(reader.result);
+            const doors = response.doors;
+            // console.log(doors)
+
+            doors.forEach(item => {
+                const door = tempDoors(
+                    item.name,
+                    item.desc,
+                    item.photo_src,
+                    item.individual_key,
+                    item.keys_name
+                );
+                wrapCDoors.appendChild(door);
+            });
+        };
+
+        reader.onerror = function (err) {
+            console.log(err, err.loaded
+                , err.loaded === 0
+                , file);
+        };
+
+        reader.readAsText(e.target.files[0]);
     });
 } catch (e) {
     console.log(e);

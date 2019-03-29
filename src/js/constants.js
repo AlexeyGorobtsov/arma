@@ -1,7 +1,7 @@
 export const constants = {
     defaultNameDoor: 'Название двери',
     defaultDescDoor: 'Описание',
-    defaultImage: '../../images/door.png',
+    defaultImage: '../../images/doors-slide/1.png',
 };
 
 export const multipler = {

@@ -57,7 +57,7 @@
 .left-menu .header-menu {
     display: flex;
     align-items: center;
-    padding: 30px 0 36px 0;
+    padding: 30px 0 20px 0;
     border-bottom: 1px solid #fff;
     margin: 0 0 0 14px;
 
@@ -97,4 +97,17 @@
     font-family: "AvenirNextCyrR", sans-serif;
     color: rgb(0, 0, 0);
     line-height: 1;
+}
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+input.visually-hidden:focus + label {
+    outline: none;
+}
+.download {
+    cursor: pointer;
 }

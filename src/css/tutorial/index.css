@@ -451,12 +451,7 @@
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
-/*.content-door .add-key span {*/
-    /*font-size: 14px;*/
-    /*font-family: "AvenirNextCyrR", sans-serif;*/
-    /*color: rgb(0, 0, 0);*/
-    /*font-weight: bold;*/
-/*}*/
+
 .wrap-modal .modal-dialog {
     max-width: 364px;
 }
@@ -483,4 +478,9 @@
 
 .wrap-modal-content .modal-content {
     padding: 20px;
+}
+
+.wrap-c-doors {
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -69,6 +69,50 @@ export const createDoorFunc = (
     return div;
 };
 
+export const tempKeys = keys => {
+    const helpArray = [];
+    keys.forEach(item => {
+        const str = `
+        <div class="content-door-wrap-img">
+            <img src="images/key.png" alt="key">
+            <p class="owner"><span>${item}</span></p>
+        </div>`;
+        helpArray.push(str);
+    });
+    // console.log(...helpArray);
+    const [innerHtml] = [...helpArray];
+    console.log(innerHtml)
+    return innerHtml;
+};
+
+export const tempDoors = (
+    name,
+    desc,
+    srcImg,
+    inKey,
+    keys
+) => {
+    const div = document.createElement('div');
+    div.classList.add('c-door');
+    div.innerHTML = `
+    <div class="head-door">
+        <div class="wrap-image-door">
+            <img src=${srcImg} alt="door">
+        </div>
+        <div class="wrap-name-door">
+            <p class="name-door">${name}</p>
+            <p class="desc-door">${desc}</p>
+            <p class="in-key-hd">${inKey}</p>
+        </div>
+    </div>
+    <div class="content-door">
+     ${tempKeys(keys)}
+     <div class="add-key">+</div>
+    </div>`;
+    return div;
+};
+
+
 export const getInt = str => {
     const array = [...str].filter(item => {
         if (!isNaN(parseInt(item))) {
@@ -79,7 +123,14 @@ export const getInt = str => {
 
     return array.length ? parseInt(array.join('')) : '';
 };
-
+const getImgRF = (src) => {
+    const wraps = document.querySelectorAll('.my-slides-rf');
+    [...wraps].forEach(item => {
+        item.querySelector('img').src === src
+            ? item.style.display = 'block'
+            : item.style.display = 'none';
+    });
+};
 export const clickPlus = (domElement, e) => {
     const addKey = document.querySelectorAll('.add-key');
     addKey.forEach((item, i) => {
@@ -92,9 +143,11 @@ export const clickPlus = (domElement, e) => {
     const individualKey = cDoor.querySelector('.in-key-hd').textContent;
     const nameForInKey = cDoor.querySelector('.name-door').textContent;
     const descTextareaDoor = cDoor.querySelector('.desc-door').textContent;
+    const img = cDoor.querySelector('.wrap-image-door img');
     nameForInKeyRF.value = nameForInKey;
     descTextareaDoorRF.value = descTextareaDoor;
     individualKeyRF.value = getInt(individualKey);
+    getImgRF(img.src);
     ownersDoor.labels = e.target.closest('.content-door').querySelectorAll('.content-door-wrap-img');
     const wrapInput = document.querySelectorAll('.wrap-inp');
     wrapInput.forEach(item => {
@@ -114,7 +167,6 @@ export const clickPlus = (domElement, e) => {
 };
 
 const getNumberInKeys = array => {
-
     const helpArr = [];
     array.forEach(item => {
         const number = getInt(item.textContent);
@@ -154,6 +206,14 @@ export const getDoors = (number) => {
     }
 };
 
+const getSrcImg = () => {
+    const wraps = document.querySelectorAll('.my-slides-rf');
+    const selectImg = [...wraps].filter(item => item.style.display === 'block');
+    let [img] = selectImg;
+
+    return img.querySelector('img').src;
+};
+
 export const getContentDoor = (array) => {
     const str = individualKeyRF.value !== '' ? `+ ${individualKeyRF.value} инд. кл.` : '';
     const cDoors = document.querySelectorAll('.c-door');
@@ -163,6 +223,8 @@ export const getContentDoor = (array) => {
     const nameDoor = cDoors[idDeleteDoor.id].querySelector('.name-door');
     const descTextareaDoor = cDoors[idDeleteDoor.id].querySelector('.desc-door');
     const individualKey = cDoors[idDeleteDoor.id].querySelector('.in-key-hd');
+    const img = cDoors[idDeleteDoor.id].querySelector('img');
+    img.src = getSrcImg();
     nameDoor.innerText = nameForInKeyRF.value; // RF right form
     descTextareaDoor.innerText = descTextareaDoorRF.value;
     individualKey.innerText = str;
@@ -190,4 +252,17 @@ export const getWrapInput = array => {
     });
 
     return keyHoldersRF;
+};
+
+/**
+ *  generate a download project
+ */
+export const download = (filename, content) => {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
 };

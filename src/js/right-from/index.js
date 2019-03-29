@@ -1,5 +1,5 @@
 import { idDeleteDoor } from '../index.js';
-import {rightForm} from '../tutorial/index.js';
+import {rightForm} from '../DOM/index.js';
 import { delay, getContentDoor, getWrapInput } from '../helper/index.js';
 
 const wrapInput = document.querySelectorAll('.wrap-inp');

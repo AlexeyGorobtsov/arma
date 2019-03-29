@@ -7,18 +7,19 @@ import {
     clickHeadDoor,
     getDoors,
 } from '../helper/index.js';
-
-const instructionHref = document.querySelector('.instruction-href');
-const wrapTutorialContent = document.querySelector('.wrap-tutorial-content');
-const wrapInstructions = document.querySelector('.wrap-instructions');
-export const rightForm = document.querySelector('.right-form-panel');
-const headDoor = document.querySelectorAll('.head-door');
-const totalFormPanel = document.querySelector('.total-form-panel');
-const bCreateDoor = document.querySelector('.b-create-door');
-const createDoor = document.querySelector('.create-door');
-const numberDoorCustom = document.querySelector('.number-door-custom');
-const buttonOk = document.querySelector('.button-ok');
-
+import {
+    wrapCDoors,
+    instructionHref,
+    wrapTutorialContent,
+    wrapInstructions,
+    rightForm,
+    headDoor,
+    totalFormPanel,
+    bCreateDoor,
+    createDoor,
+    numberDoorCustom,
+    buttonOk,
+} from '../DOM/index.js';
 
 export const tutorialDom = {
     wrapInstructions,
@@ -81,8 +82,7 @@ try {
     bCreateDoor.addEventListener('click', e => {
         e.preventDefault();
         const door = createDoorFunc();
-        const parentDiv = createDoor.parentNode;
-        parentDiv.insertBefore(door, createDoor);
+        wrapCDoors.appendChild(door);
     });
     /**
      * create the number of doors specified in the modal window
@@ -93,8 +93,7 @@ try {
             .then(() => {
                 const doors = getDoors(numberDoorCustom.value) || [];
                 doors.forEach(door => {
-                    const parentDiv = createDoor.parentNode;
-                    parentDiv.insertBefore(door, createDoor);
+                    wrapCDoors.appendChild(door);
                 });
             })
             .then(() => numberDoorCustom.value = '');
