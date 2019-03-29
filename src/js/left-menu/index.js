@@ -1,7 +1,8 @@
 import {delay, fadeOut} from '../helper/index.js';
 import {tutorialDom} from '../tutorial/index.js';
 import {startScreenDom} from '../start-screen/index.js';
-import { fadeIn } from '../helper/index.js';
+import {fadeIn} from '../helper/index.js';
+import {makeRequest} from '../DOM';
 
 const hamburger = document.querySelector('.c-hamburger');
 const leftPanel = document.getElementById('leftSidePanel');
@@ -56,6 +57,13 @@ try {
         fadeOut(startScreenDom.tutorial);
         fadeIn(startScreenDom.startScreen);
 
+    });
+    /**
+     * show modal window
+     */
+    makeRequest.addEventListener('click', e => {
+        e.preventDefault();
+       console.log('test')
     });
 } catch (e) {
     console.log(e);
