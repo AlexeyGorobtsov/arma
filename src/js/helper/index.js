@@ -1,5 +1,5 @@
 import {idDeleteDoor} from '../index.js';
-import {ownersDoor} from '../index';
+import {ownersDoor} from '../index.js';
 import {constants} from '../constants.js';
 import {
     nameForInKeyRF,
@@ -10,9 +10,10 @@ import {
     numberInKeyTF,
     priceAbus,
     priceApecs,
-
+    tutorialTitleHead,
+    dataCreated,
 } from '../DOM/index.js';
-import {calculation} from '../pricing';
+import {calculation} from '../pricing/index.js';
 
 const {defaultNameDoor, defaultDescDoor, defaultImage} = constants;
 
@@ -70,19 +71,18 @@ export const createDoorFunc = (
 };
 
 export const tempKeys = keys => {
-    const helpArray = [];
-    keys.forEach(item => {
+    const innerHtml = keys.reduce((acc, item) => {
         const str = `
         <div class="content-door-wrap-img">
             <img src="images/key.png" alt="key">
             <p class="owner"><span>${item}</span></p>
         </div>`;
-        helpArray.push(str);
-    });
-    // console.log(...helpArray);
-    const [innerHtml] = [...helpArray];
-    console.log(innerHtml)
-    return innerHtml;
+        acc.push(str);
+
+        return acc;
+    }, []);
+
+    return innerHtml.join('');
 };
 
 export const tempDoors = (
@@ -94,24 +94,32 @@ export const tempDoors = (
 ) => {
     const div = document.createElement('div');
     div.classList.add('c-door');
+    const individKey = inKey !== 0
+        ? `+ ${inKey} инд. кл.`
+        : '';
     div.innerHTML = `
     <div class="head-door">
-        <div class="wrap-image-door">
+    <div class="wrap-image-door">
             <img src=${srcImg} alt="door">
         </div>
         <div class="wrap-name-door">
             <p class="name-door">${name}</p>
             <p class="desc-door">${desc}</p>
-            <p class="in-key-hd">${inKey}</p>
+            <p class="in-key-hd">${individKey}</p>
         </div>
     </div>
     <div class="content-door">
      ${tempKeys(keys)}
      <div class="add-key">+</div>
     </div>`;
+
     return div;
 };
 
+export const tempMeta = data => {
+    tutorialTitleHead.textContent = data.project_title;
+    dataCreated.textContent = data.created_at;
+};
 
 export const getInt = str => {
     const array = [...str].filter(item => {
@@ -123,6 +131,7 @@ export const getInt = str => {
 
     return array.length ? parseInt(array.join('')) : '';
 };
+
 const getImgRF = (src) => {
     const wraps = document.querySelectorAll('.my-slides-rf');
     [...wraps].forEach(item => {
@@ -192,8 +201,8 @@ export const clickHeadDoor = (domElement, e) => {
     numberKeyTF.textContent = numberKeys.length;
     numberInKeyTF.textContent = getNumberInKeys(numberInKeys);
     const price = calculation(numberDoors);
-    priceAbus.textContent = `${price.abusPrice} руб.`;
-    priceApecs.textContent = `${price.apecsPrice} руб.`;
+    priceAbus.textContent = `${price.totalAbusPrice} руб.`;
+    priceApecs.textContent = `${price.totalApecsPrice} руб.`;
 };
 
 export const getDoors = (number) => {
@@ -208,7 +217,8 @@ export const getDoors = (number) => {
 
 const getSrcImg = () => {
     const wraps = document.querySelectorAll('.my-slides-rf');
-    const selectImg = [...wraps].filter(item => item.style.display === 'block');
+    const selectImg = [...wraps].filter(item => item.style.display === 'flex'
+        || item.style.display === 'block');
     let [img] = selectImg;
 
     return img.querySelector('img').src;
@@ -265,4 +275,74 @@ export const download = (filename, content) => {
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
+};
+
+const getKeysName = arr => {
+
+    return [...arr].reduce((arrName, item) => {
+        const name = item.textContent;
+        arrName.push(name);
+        return arrName;
+    }, []);
+};
+
+/**
+ * generate JSON
+ */
+export const getContentForSave = () => {
+    const cDoors = document.querySelectorAll('.c-door');
+
+    return [...cDoors].reduce((acc, item, i) => {
+        const id = i;
+        const name = item.querySelector('.name-door').textContent;
+        const desc = item.querySelector('.desc-door').textContent;
+        const src = item.querySelector('.wrap-image-door img').src;
+        const imgName = src.split('/');
+        const photo_src = `images/doors-slide/${imgName[imgName.length - 1]}`;
+        const indKey = getInt(item.querySelector('.in-key-hd').textContent);
+        const individual_key = indKey !== ''
+            ? indKey
+            : 0;
+        const owner = item.querySelectorAll('.owner span');
+        const keys_name = getKeysName(owner);
+        acc.push({id, name, desc, photo_src, individual_key, keys_name});
+
+        return acc;
+    }, []);
+};
+
+export const getMetaForSave = () => {
+    const project_title = document.querySelector('.title-header-t').textContent;
+    const created_at = document.querySelector('.data-created').textContent;
+
+    return {project_title, created_at};
+};
+
+export const removeDom = el => {
+    while (el.firstChild) {
+        el.removeChild(el.firstChild);
+    }
+};
+
+export const fillContent = data => {
+    const wrapCDoors = document.querySelector('.wrap-c-doors');
+    if (data === undefined) {
+        console.log('no-template');
+        return;
+    }
+    const doors = data.doors;
+    const meta = data.meta;
+    removeDom(wrapCDoors);
+
+    doors.forEach(item => {
+        const door = tempDoors(
+            item.name,
+            item.desc,
+            item.photo_src,
+            item.individual_key,
+            item.keys_name
+        );
+        wrapCDoors.appendChild(door);
+        tempMeta(meta);
+    });
 };

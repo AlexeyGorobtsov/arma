@@ -1,8 +1,12 @@
 import {delay, fadeOut} from '../helper/index.js';
 import {tutorialDom} from '../tutorial/index.js';
-import {startScreenDom} from '../start-screen/index.js';
 import {fadeIn} from '../helper/index.js';
-import {download, tempDoors} from '../helper/index';
+import {
+    download,
+    getContentForSave,
+    getMetaForSave,
+    fillContent,
+} from '../helper/index.js';
 import {
     saveProject,
     hamburger,
@@ -11,9 +15,10 @@ import {
     reference,
     newProject,
     inputUpload,
-    wrapCDoors,
-} from '../DOM';
-import template from '../templates/index.js';
+    tutorial,
+    startScreen
+} from '../DOM/index.js';
+// import template from '../templates/index.js';
 
 
 try {
@@ -60,8 +65,8 @@ try {
      */
     newProject.addEventListener('click', e => {
         e.preventDefault();
-        fadeOut(startScreenDom.tutorial);
-        fadeIn(startScreenDom.startScreen);
+        fadeOut(tutorial);
+        fadeIn(startScreen);
 
     });
     /**
@@ -69,6 +74,10 @@ try {
      */
     saveProject.addEventListener('click', e => {
         e.preventDefault();
+        const template = {
+            doors: getContentForSave(),
+            meta: getMetaForSave()
+        };
         download('test.txt', JSON.stringify(template));
     });
     /**
@@ -78,22 +87,8 @@ try {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onload = () => {
-
-            //console.log(reader.result);
             const response = JSON.parse(reader.result);
-            const doors = response.doors;
-            // console.log(doors)
-
-            doors.forEach(item => {
-                const door = tempDoors(
-                    item.name,
-                    item.desc,
-                    item.photo_src,
-                    item.individual_key,
-                    item.keys_name
-                );
-                wrapCDoors.appendChild(door);
-            });
+            fillContent(response);
         };
 
         reader.onerror = function (err) {
@@ -102,7 +97,9 @@ try {
                 , file);
         };
 
-        reader.readAsText(e.target.files[0]);
+        e.target.files[0]
+            ? reader.readAsText(e.target.files[0])
+            : false;
     });
 } catch (e) {
     console.log(e);

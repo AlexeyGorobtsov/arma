@@ -6,93 +6,140 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap-grid.min.css" />-->
-    <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css" />-->
-    <!--<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />-->
-    <!--<link rel="stylesheet" href="./css/startScreen/index.css">-->
-    <!--<link rel="stylesheet" href="./css/tutorial/index.css">-->
-    <!--<link rel="stylesheet" href="./css/left-menu/index.css">-->
-    <!--<link rel="stylesheet" href="./css/right-form/index.css">-->
-    <!--<link rel="stylesheet" href="./css/total-form/index.css">-->
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/startScreen/index.css">
+    <link rel="stylesheet" href="./css/tutorial/index.css">
+    <link rel="stylesheet" href="./css/left-menu/index.css">
+    <link rel="stylesheet" href="./css/right-form/index.css">
+    <link rel="stylesheet" href="./css/total-form/index.css">
+    <script src="js/jquery/jquery.min.js"></script>
 </head>
 <body>
-<div class="container-fluid start-screen hide-dom">
-    <div class="row wrap-header">
-        <img src="images/img__logo-black.png" alt="logo">
-    </div>
-    <div class="row bg-start-screen">
-        <div class="col-md-8">
-            <div class="content-bg-s">
-                <p class="subtitle">Конструктор мастер-системы</p>
-                <h1>Создайте свою мастер-систему</h1>
-                <form action="">
-                    <label class="project-name" for="name-system">Введите название вашего проекта</label>
-                    <div class="wrap-input-button">
-                        <input type="text" id="name-system" class="project-input" placeholder="Мини-отель «Веста»">
-                        <button class="button-create ">Создать</button>
-                    </div>
-                    <div class="placeholders">
-                        <p class="example">Например</p>
-                        <p><span>Гостиница «7 кают»</span></p>
-                        <p><span>Мой загородный дом</span></p>
-                        <p><span>Отель на Ленинградке</span></p>
-                    </div>
-                </form>
-            </div>
+<div class="container-fluid start-screen">
+    <div class="main-wrap bg-start-screen">
+        <div class="row wrap-header">
+            <img src="images/img__logo-black.png" alt="logo">
         </div>
-        <div class="col-md-4">
-            <div class="template">
-                <p class="title">Шаблоны</p>
-                <p class="content">
-                    Воспользуйтесь готовыми шаблонами, чтобы ускорить
-                    разработку мастер-системы под свои нужды или
-                    создать свой проект с нуля.
-                </p>
-                <div class="group">
-                    <div class="item-1">
-                        <div class="wrap-img">
-                            <img src="images/house 2.png" alt="house">
-                            <p class="name">Загородный дом</p>
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="content-bg-s">
+                    <p class="subtitle">Конструктор мастер-системы</p>
+                    <h1>Создайте свою мастер-систему</h1>
+                    <form action="">
+                        <label class="project-name" for="name-system">Введите название вашего проекта</label>
+                        <div class="wrap-button-placeholders">
+                            <div class="wrap-input-button">
+                                <input type="text" id="name-system" class="project-input" placeholder="Мини-отель «Веста»">
+                                <button class="button-create ">Создать</button>
+                            </div>
+                            <div class="placeholders">
+                                <p class="example">Например</p>
+                                <p><span>Гостиница «7 кают»</span></p>
+                                <p class="hide-parag-2"><span>Мой загородный дом</span></p>
+                                <p class="hide-parag"><span>Отель на Ленинградке</span></p>
+                            </div>
                         </div>
-                        <p class="description">
-                            8 дверейб 1 мастер-ключ, 3 инднивидуальных ключа
-                        </p>
-                    </div>
-                    <div class="item-2">
-                        <div class="wrap-img">
-                            <img src="images/house 2.png" alt="house">
-                            <p class="name">Загородный дом</p>
-                        </div>
-                        <p class="description">
-                            8 дверейб 1 мастер-ключ, 3 инднивидуальных ключа
-                        </p>
-                    </div>
-                    <div class="item-3">
-                        <div class="wrap-img">
-                            <img src="images/house 2.png" alt="house">
-                            <p class="name">Загородный дом</p>
-                        </div>
-                        <p class="description">
-                            8 дверейб 1 мастер-ключ, 3 инднивидуальных ключа
-                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="template">
+                    <p class="title">Шаблоны</p>
+                    <p class="content">
+                        Воспользуйтесь готовыми шаблонами, чтобы ускорить
+                        разработку мастер-системы под свои нужды или
+                        создать свой проект с нуля.
+                    </p>
+                    <div class="slide-show-container">
+                        <div class="group-sl fade-s">
+                            <div class="item-template">
+                                <div class="wrap-img">
+                                    <img src="images/house 2.png" alt="house">
+                                    <p class="name">Загородный дом</p>
+                                </div>
+                                <p class="description">
+                                    8 дверей, 1 мастер-ключ,
+                                    <span>3 пользователя</span>
+                                </p>
+                            </div>
+                            <div class="item-template">
+                                <div class="wrap-img">
+                                    <img src="images/flat.png" alt="house">
+                                    <p class="name">Квартира</p>
+                                </div>
+                                <p class="description">
+                                    6 дверей, 1 мастер-ключ,
+                                    <span>2 пользователя</span>
+                                </p>
+                            </div>
+                            <div class="item-template">
+                                <div class="wrap-img">
+                                    <img src="images/house 2.png" alt="house">
+                                    <p class="name">Загородный дом</p>
+                                </div>
+                                <p class="description">
+                                    8 дверей, 1 мастер-ключ,
+                                    <span>3 пользователя</span>
+                                </p>
 
+                            </div>
+                            <div class="item-4">
+                                <a href="#" class="wrap-href">
+                                    <span>ещё 3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="group-sl fade-s">
+                            <div class="item-template">
+                                <div class="wrap-img">
+                                    <img src="images/house 2.png" alt="house">
+                                    <p class="name">Загородный дом</p>
+                                </div>
+                                <p class="description">
+                                    8 дверей, 1 мастер-ключ,
+                                    <span>3 пользователя</span>
+                                </p>
+                            </div>
+                            <div class="item-template">
+                                <div class="wrap-img">
+                                    <img src="images/house 2.png" alt="house">
+                                    <p class="name">Загородный дом</p>
+                                </div>
+                                <p class="description">
+                                    8 дверей, 1 мастер-ключ,
+                                    <span>3 пользователя</span>
+                                </p>
+                            </div>
+                            <div class="item-template">
+                                <div class="wrap-img">
+                                    <img src="images/house 2.png" alt="house">
+                                    <p class="name">Загородный дом</p>
+                                </div>
+                                <p class="description">
+                                    8 дверей, 1 мастер-ключ,
+                                    <span>3 пользователя</span>
+                                </p>
+
+                            </div>
+                            <div class="item-4">
+                                <a href="#" class="wrap-href">
+                                    <span>ещё 0</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item-4">
-                        <a href="#" class="wrap-href">
-                            <span>ещё 9</span>
-                        </a>
+                    <div class="wrap-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
                 </div>
-                <ul>
-                    <li class="active"></li>
-                    <li></li>
-                    <li></li>
-                </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid tutorial hide">
+<div class="container-fluid tutorial hide-dom">
     <div class="row tutorial-header">
         <div class="col-md-2">
             <div class="wrap-menu-nav">
@@ -231,7 +278,7 @@
                         <a href="#" class="create-key">Создать ключ</a>
                     </div>
                     <div class="wrap-key-input">
-                        <div class="wrap-inp active">
+                        <div class="wrap-inp">
                             <input type="checkbox" id="1rf">
                             <label for="1rf">Владелец</label>
                         </div>
@@ -429,7 +476,7 @@
                                     <input type="tel" class="form-control" id="phone" placeholder="+7-000-000-00-00">
                                     <small id="phoneHelp" class="form-text text-muted">Введите ваше телефон.</small>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Отправить</button>
+                                <button type="submit" id="sendOrder" class="btn btn-primary">Отправить</button>
                             </form>
                         </div>
                     </div>
@@ -439,6 +486,6 @@
     </div>
 </div>
 
-<!--<script type="module" src="./js/index.js"></script>-->
+<script type="module" src="./js/index.js"></script>
 </body>
 </html>

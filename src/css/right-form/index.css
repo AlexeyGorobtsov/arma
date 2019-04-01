@@ -70,6 +70,7 @@
     font-weight: bold;
     line-height: 1;
     margin: 0;
+    cursor: pointer;
 }
 
 .wrap-inp input {
@@ -235,7 +236,8 @@
 
 /*slide*/
 .my-slides-rf {
-    display: none
+    display: none;
+    justify-content: center;
 }
 
 img {
@@ -244,7 +246,6 @@ img {
 
 /* Slideshow container */
 .slide-show-container {
-    max-width: 1000px;
     position: relative;
     margin: 24px;
 }
@@ -297,6 +298,7 @@ img {
     padding: 8px 12px;
     position: absolute;
     top: 0;
+    left: 0;
 }
 
 /* Fading animation */

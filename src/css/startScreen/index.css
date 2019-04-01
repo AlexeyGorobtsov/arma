@@ -19,7 +19,7 @@
 .wrap-header {
     display: flex;
     justify-content: center;
-    padding: 22px 0 22px 0;
+    padding: 22px 0 142px 0;
 }
 
 .bg-start-screen {
@@ -47,6 +47,7 @@ h1 {
     font-weight: bold;
     line-height: 1;
     padding: 20px 0 0 96px;
+    max-width: 800px;
 }
 
 .project-name {
@@ -136,13 +137,14 @@ p.content{
     line-height: 1.5;
     max-width: 370px;
 }
-.item-1, .item-2, .item-3{
+.item-template {
     border-radius: 3px;
     background: rgb(255, 255, 255);
     margin: 4px;
     max-width: 174px;
+    cursor: pointer;
 }
-.group {
+.group-sl {
     display: flex;
     max-width: 472px;
     flex-wrap: wrap;
@@ -162,24 +164,28 @@ p.content{
     color: rgb(0, 0, 0);
     line-height: 1.5;
 }
-.group .description {
+.group-sl .description {
     font-size: 12px;
     font-family: "AvenirNextCyrR", sans-serif;
     color: #888;
     padding: 6px;
     margin-bottom: 2px;
 }
-.group .wrap-href {
+.group-sl .description span {
+    display: block;
+}
+.group-sl .wrap-href {
     font-size: 18px;
     font-family: "AvenirNextCyrR", sans-serif;
     color: rgb(255, 255, 255);
     line-height: 1.5;
     font-weight: 500;
+    cursor: unset;
 }
 .wrap-href:hover {
     text-decoration: unset;
 }
-.group .wrap-href span {
+.group-sl .wrap-href span {
     border-bottom: 1px solid rgba(255, 255, 255, 0.302);
 }
 .item-4{
@@ -188,15 +194,104 @@ p.content{
     align-items: center;
     width: 174px;
 }
-.template ul {
-    display: flex;
-    padding-left: 186px;
-}
-.template ul li {
-    color: #b4adbe;
-    padding: 8px;
+.dot {
     cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
-.template ul .active {
-    color: #fff;
+.active, .dot:hover {
+    background-color: #717171;
+}
+.template .slide-show-container {
+    margin: 0;
+}
+.wrap-dots {
+    display: flex;
+    justify-content: center;
+    max-width: calc(174px * 2);
+    padding: 16px;
+}
+
+@media (max-width: 1200px) {
+    .bg-start-screen .content-bg-s h1 {
+        font-size: 56px;
+        padding: 20px 0 0 24px;
+    }
+    .wrap-input-button {
+        margin-left: 24px;
+    }
+    .project-name {
+        padding: 110px 0 0 24px;
+    }
+    .placeholders .example {
+        padding: 4px 0 0 24px;
+    }
+    .placeholders {
+        max-width: 628px;
+    }
+}
+@media (max-width: 1199px) {
+    .template {
+        padding: 100px 0 0 106px;
+    }
+
+}
+@media (max-width: 764px) {
+    .content-bg-s {
+        padding: 0 0 0 10px;
+    }
+
+    .placeholders .hide-parag {
+        display: none;
+    }
+    .wrap-button-placeholders {
+        padding: 20px;
+    }
+    .wrap-input-button {
+        margin-left: 0;
+        max-width: unset;
+    }
+    .placeholders .example {
+        padding: 4px 0 0 0;
+    }
+
+    .placeholders {
+         max-width: unset;
+        justify-content: space-around;
+    }
+
+    .wrap-header {
+        padding: 22px 0 74px 0;
+    }
+    .bg-start-screen {
+        padding-bottom: 0;
+    }
+    .template {
+        padding: 100px 0 100px 106px;
+    }
+}
+@media (max-width: 467px) {
+    .bg-start-screen .content-bg-s h1 {
+        font-size: 44px;
+    }
+    .project-input {
+        font-size: 24px;
+    }
+    .hide-parag-2 {
+        display: none;
+    }
+
+    .subtitle {
+        display: flex;
+        justify-content: center;
+        padding: 54px 0 0 0;
+    }
+    .template {
+        padding: 28px 28px 100px 28px;
+    }
 }

@@ -1,5 +1,5 @@
 import {getInt} from '../helper/index.js';
-import {multipler, doors, price} from '../constants';
+import {multipler, doors, price} from '../constants.js';
 
 const {
     oneK,
@@ -10,27 +10,24 @@ const {
 
 
 export const calculation = (array) => {
-    const helpArr = [];
     const abus = [];
     const apecs = [];
-    array.forEach(item => {
+    let locksAndKeys = [...array].reduce((acc, item) => {
         const keys = item.querySelectorAll('.content-door-wrap-img').length;
         const typeNumber = getInt(item.querySelector('.in-key-hd').textContent);
         const inKeys = typeNumber !== ''
             ? typeNumber
             : 0;
-        helpArr.push({keys, inKeys});
-    });
+        acc.push({keys, inKeys});
 
-    helpArr.forEach(item => {
+        return acc;
+    }, []);
+
+    locksAndKeys.forEach(item => {
         switch (item.keys) {
         case doors.zero:
-            item.inKeys !== 0
-                ? abus.push(price.inKey * item.inKeys)
-                : false;
-            item.inKeys !== 0
-                ? apecs.push(price.inKey * item.inKeys)
-                : false;
+            abus.push(price.inKey * item.inKeys + price.abus );
+            apecs.push(price.inKey * item.inKeys + price.apecs);
             break;
         case doors.one:
             abus.push(price.key * oneK + price.abus + price.inKey * item.inKeys);
@@ -51,12 +48,22 @@ export const calculation = (array) => {
         default:
             abus.push(price.key * fourK + price.abus + price.inKey * item.inKeys);
             apecs.push(price.key * fourK + price.apecs + price.inKey * item.inKeys);
-
         }
     });
+    const locks = locksAndKeys.length;
+    const abusLocksPrice = locks * price.abus;
+    const apecsLocksPrice = locks * price.apecs;
+    const totalAbusPrice = abus.reduce((acc, curent) => acc + curent, 0);
+    const totalApecsPrice = apecs.reduce((acc, curent) => acc + curent, 0);
+    const abusKeyPrice = totalAbusPrice - abusLocksPrice;
+    const apecsKeyPrice = totalApecsPrice - apecsLocksPrice;
 
-    const abusPrice = abus.reduce((acc, curent) => acc + curent, 0);
-    const apecsPrice = apecs.reduce((acc, curent) => acc + curent, 0);
-
-    return {abusPrice, apecsPrice};
+    return {
+        totalAbusPrice,
+        totalApecsPrice,
+        abusLocksPrice,
+        apecsLocksPrice,
+        abusKeyPrice,
+        apecsKeyPrice,
+    };
 };
